@@ -6,13 +6,11 @@ curl_mult		domain			curl 20x w/1sec delay
 curl_orig		doamin + origIP		curl via origin IP
 curl_resource		domain +IP/url		curl specifc resource via origin IP
 curl_sni		domain			curl SNI enabled domain
-dig_mult
-dig_mx
+dig_mult                domain                  loop to dig slowly over time
 dnscheck		domain			dig multiple subdomains, SOA, MX etc
 investigate		doamin			whois dns check for domain in one go
-open_ssl_509
+open_ssl_509            domain/ip               check SSL cert
 open_ssl_short
-show_certs
 tcpdump_headers		run on orig 		outputs tcpdump in header form
 time_mult
 time_wait

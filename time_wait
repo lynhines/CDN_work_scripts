@@ -1,0 +1,1 @@
+curl -I -o /dev/null -w "DNS: %{time_namelookup} Connect: %{time_connect} TTFB: %{time_starttransfer} Total time: %{time_total} \n" $1 $2

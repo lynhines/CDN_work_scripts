@@ -1,0 +1,2 @@
+for i in {1..20}; do time ./curl_direct $1; sleep 1;done  > jones  2>&1
+
