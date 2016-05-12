@@ -1,0 +1,1 @@
+curl  -I -X GET -H "Host: $1" -H "User-Agent: Mozilla/4.0"  $2

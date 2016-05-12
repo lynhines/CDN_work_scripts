@@ -1,0 +1,1 @@
+openssl_client -connect $1:443 -servername $1 < /dev/null | openssl x509 -text
