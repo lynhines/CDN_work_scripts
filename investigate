@@ -1,0 +1,30 @@
+#!/bin/bash
+# use predefined variables to access passed arguments
+#echo arguments to the shell
+echo ------------------------------------------------------------------------ 
+echo WHOIS
+whois  $1 | egrep '(Name|Update)'| sed '/^;/d'
+#~lynhines/WH  $1 | egrep '(Name|Update)'|sed '/^;/d'
+echo ------------------------------------------------------------------------ 
+echo DIG
+dig  $1 | awk '{print $1,$3,$4,$5}'| grep $1 | sed '/^;/d'
+dig  www.$1 | awk '{print $1,$3,$4,$5}'| grep www.$1 | sed '/^;/d'
+dig mail.$1 | awk '{print $1,$3,$4,$5}'| grep mail   | sed '/^;/d'
+dig cpanel.$1 | awk '{print $1,$3,$4,$5}'| grep cpanel | sed '/^;/d'
+dig direct.$1 | awk '{print $1,$3,$4,$5}'| grep direct | sed '/^;/d'
+dig direct-connect.$1 |awk '{print $1,$3,$4,$5}'| grep direct-connect | sed '/^;/d'
+dig ftp.$1 |awk '{print $1,$3,$4,$5}' | grep ftp | sed '/^;/d'
+dig whm.$1 |awk '{print $1,$3,$4,$5}'| grep whm | sed '/^;/d'
+dig forum.$1 |awk '{print $1,$3,$4,$5}' |grep forum | sed '/^;/d'
+dig blog.$1 | awk '{print $1,$3,$4,$5}'| grep blog | sed '/^;/d'
+dig webmail.$1 | awk '{print $1,$3,$4,$5}'| grep webmail | sed '/^;/d'
+#dig *$1 | awk '{print $1,$3,$4,$5}'| egrep '[webmail|direct|ftp|mail|www|direct-connect]'
+dig MX $1 | awk '{print $1,$3,$4,$5}'| grep MX | sed '/^;/d'
+dig TXT $1 | awk '{print $1,$3,$4,$5}'| grep TXT | sed '/^;/d'
+dig SOA $1 | awk '{print $1,$3,$4,$5}'| grep SOA | sed '/^;/d'
+dig NS $1 | awk '{print $1,$3,$4,$5}'| grep NS | sed '/^;/d'
+dig *.$1 | awk '{print $1,$3,$4,$5}'| grep *.$1 | sed '/^;/d'
+echo ------------------------------------------------------------------------ 
+echo CURL
+curl -v -I -X GET -A 'firefox/4.0' $1
+#curl -v  -A 'firefox/4.0' $1
