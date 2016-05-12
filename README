@@ -1,5 +1,4 @@
 Command			Usage			Description	
-checking_origin.sh	domain + IP		curl domain through CF and origin
 curl_direct		domain			curl direc with User Agent
 curl_https		domain + origIP		curl via https on origin IP
 curl_mult		domain			curl 20x w/1sec delay
