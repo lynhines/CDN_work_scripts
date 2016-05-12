@@ -1,0 +1,21 @@
+Command			Usage			Description	
+checking_origin.sh	domain + IP		curl domain through CF and origin
+curl_direct		domain			curl direc with User Agent
+curl_https		domain + origIP		curl via https on origin IP
+curl_mult		domain			curl 20x w/1sec delay
+curl_orig		doamin + origIP		curl via origin IP
+curl_resource		domain +IP/url		curl specifc resource via origin IP
+curl_sni		domain			curl SNI enabled domain
+dig_mult
+dig_mx
+dnscheck		domain			dig multiple subdomains, SOA, MX etc
+investigate		doamin			whois dns check for domain in one go
+open_ssl_509
+open_ssl_short
+show_certs
+tcpdump_headers		run on orig 		outputs tcpdump in header form
+time_mult
+time_wait
+toplogs.sh		apache/nginx log	parse top hits on log files
+word_freq.sh
+zcat_logs		access error gz		uncompresses gz files and parses with toplogs.sh
