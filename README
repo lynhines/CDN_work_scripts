@@ -16,4 +16,4 @@ time_wait
 toplogs.sh		apache/nginx log	parse top hits on log files
 word_freq.sh
 zcat_logs		access error gz		uncompresses gz files and parses with toplogs.sh
-unpack.       unpack tgz files into new respective directories
+unpack.      ./unpack                   unpack tgz files into new respective directories
