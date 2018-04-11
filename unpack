@@ -1,0 +1,15 @@
+for a in *.tgz
+do
+    a_dir=`expr $a : '\(.*\).tgz'`
+    mkdir $a_dir 2>/dev/null
+    tar -xvzf $a -C $a_dir
+done
+rm *.tgz
+
+for a in  cf-[0-9a-z]*-[0-9]*-[0-9]*-[0-9]*\/*.tgz
+do
+    a_dir=`expr $a : '\(.*\).tgz'`
+    mkdir $a_dir 2>/dev/null
+    tar -xvzf $a -C $a_dir
+done
+rm cf-[0-9a-z]*-[0-9]*-[0-9]*-[0-9]*\/*.tgz
