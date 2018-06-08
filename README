@@ -5,6 +5,7 @@ curl_mult		domain			curl 20x w/1sec delay
 curl_orig		doamin + origIP		curl via origin IP
 curl_resource		domain +IP/url		curl specifc resource via origin IP
 curl_sni		domain			curl SNI enabled domain
+curltotal    url        additional information from curl request - performance identity 
 dig_mult                domain                  loop to dig slowly over time
 dnscheck		domain			dig multiple subdomains, SOA, MX etc
 investigate		doamin			whois dns check for domain in one go
