@@ -1,0 +1,7 @@
+for a in *.tgz;
+do
+    a_dir=`expr $a : '\(.*\).tgz'`
+    mkdir $a_dir 2>/dev/null
+    tar -xvzf $a -C $a_dir
+    rm *.tgz
+done
